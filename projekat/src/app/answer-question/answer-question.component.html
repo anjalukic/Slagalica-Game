@@ -1,0 +1,24 @@
+<div>
+  <mat-card>
+    <form (submit)="onAnswer(form)" #form="ngForm">
+      <section class="mat-typography">
+        <h1>Vase tajno pitanje: {{ question }}</h1>
+      </section>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          name="answer"
+          ngModel
+          required
+          #answer="ngModel"
+        />
+        <mat-error *ngIf="answer.invalid"
+          >Morate odgovoriti na pitanje!</mat-error
+        >
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">Dalje</button>
+    </form>
+  </mat-card>
+</div>

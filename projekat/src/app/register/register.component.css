@@ -1,0 +1,32 @@
+div{
+  text-align: center;
+  margin: auto;
+  right: 0;
+  margin-top: 1rem;
+  left: 0;
+  width: 500px;
+  color: primary;
+}
+h3{
+  font-weight: normal;
+  text-align: center;
+}
+form {
+  width: 300px;
+  margin: 0 auto;
+  font-size: 11px;
+}
+td{
+  text-align: center;
+  padding: 1px;
+}
+
+table {
+  border-spacing: 1px;
+}
+
+img {
+  height: 3rem;
+}
+
+

@@ -1,0 +1,5 @@
+{"_id":{"$oid":"5d8734ee23cabb10d4f6eec0"},"date":{"$date":{"$numberLong":"1569110400000"}},"game":"moj broj","anagramIndex":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d87359023cabb10d4f6eec1"},"date":{"$date":{"$numberLong":"1569196800000"}},"game":"anagram","anagramIndex":{"$numberInt":"4"}}
+{"_id":{"$oid":"5d874166ee465420f49d0d1c"},"date":{"$date":{"$numberLong":"1569283200000"}},"game":"5x5","anagramIndex":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d87430eeac9ab08cce4105a"},"date":{"$date":{"$numberLong":"1569369600000"}},"game":"5x5","anagramIndex":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d87b1417af5ad2e1416b374"},"date":{"$date":{"$numberLong":"1569463200000"}},"game":"zanimljiva geografija","anagramIndex":{"$numberInt":"0"}}

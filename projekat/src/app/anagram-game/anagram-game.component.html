@@ -1,0 +1,72 @@
+<div>
+  <mat-card>
+    <p>{{ message }}</p>
+    <mat-progress-bar
+      style="height: 10px;"
+      mode="determinate"
+      [value]="100 - (timeLeft * 100) / 60"
+      color="warn"
+    ></mat-progress-bar>
+
+    <form (submit)="onSubmit(form)" #form="ngForm">
+      <table>
+        <tr>
+          <td>
+            Anagram:
+          </td>
+          <td>
+            {{ riddle }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Resenje:
+          </td>
+          <td>
+            <mat-form-field>
+              <input
+                matInput
+                style="text-align: center"
+                type="text"
+                name="answer"
+                ngModel
+                #answer="ngModel"
+                [disabled]="timeUp"
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              *ngIf="!submitted"
+            >
+              Kraj
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" *ngIf="submitted">
+            {{ points }}
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              *ngIf="submitted"
+              (click)="navigateBack()"
+            >
+              Vrati se nazad
+            </button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </mat-card>
+</div>

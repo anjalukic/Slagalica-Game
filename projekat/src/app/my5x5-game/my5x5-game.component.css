@@ -1,0 +1,10 @@
+mat-grid-tile {
+  background: lightblue;
+  color: darkslategrey;
+  font-size: 30px;
+}
+mat-card{
+  width: 300px;
+  margin: auto;
+  margin-top: 2rem;
+}

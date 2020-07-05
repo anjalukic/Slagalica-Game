@@ -1,0 +1,13 @@
+form {
+  width: 300px;
+  margin: 0 auto;
+}
+
+a{
+  color: #c2185b;
+  font-size: 12px;
+}
+a:visited{
+  color: #c2185b;
+}
+

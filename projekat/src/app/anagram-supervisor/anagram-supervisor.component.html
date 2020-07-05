@@ -1,0 +1,61 @@
+<div>
+  <form (submit)="onSubmit(form)" #form="ngForm">
+    <table>
+      <tr>
+        <td>
+          Zagonetka:
+        </td>
+        <td>
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              name="riddle"
+              pattern="[A-Za-z ]+"
+              ngModel
+              required
+              #riddle="ngModel"
+            />
+            <mat-error *ngIf="riddle.invalid"
+              >Morate uneti validan anagram, bez interpunkcijskih znakova!</mat-error
+            >
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+         Resenje:
+        </td>
+        <td>
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              name="answer"
+              pattern="[A-Za-z ]+"
+              ngModel
+              required
+              #answer="ngModel"
+            />
+            <mat-error *ngIf="answer.invalid">Morate uneti validan anagram, bez interpunkcijskih znakova!</mat-error>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="mat-small" style="color:red">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button mat-raised-button color="primary" type="submit">
+            Posalji
+          </button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>

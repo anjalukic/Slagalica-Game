@@ -1,0 +1,62 @@
+<div>
+  <mat-card>
+    <p>{{ timeString }}</p>
+    <mat-progress-bar
+      style="height: 10px;"
+      mode="determinate"
+      [value]="100 - (timeLeft * 100) / 60"
+      color="warn"
+    ></mat-progress-bar>
+    <h3>Na slovo, na slovo... {{ letter }}</h3>
+    <table>
+        <tr *ngFor="let category of categories; let i = index">
+            <td>{{ category }}:</td>
+            <td>
+              <mat-form-field>
+                <input
+                  matInput
+                  style="text-align: center"
+                  type="text"
+                  (input)="categoriesAnswer[i].name = $event.target.value"
+                  [disabled]="timeUp"
+                />
+              </mat-form-field>
+            </td>
+          </tr>
+      <tr>
+        <td colspan="2">
+          <button
+            mat-raised-button
+            color="primary"
+            *ngIf="!submitted"
+            (click)="submit()"
+          >
+            Kraj
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" *ngIf="submitted && points>0">
+          Osvojili ste ukupno {{ points}} poena!
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" *ngIf="submitted">
+          {{ evalString }}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button
+            mat-raised-button
+            color="primary"
+            *ngIf="submitted"
+            (click)="navigateBack()"
+          >
+            Vrati se nazad
+          </button>
+        </td>
+      </tr>
+    </table>
+  </mat-card>
+</div>

@@ -1,0 +1,15 @@
+form {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+mat-card{
+  margin: 2%;
+}
+div{
+  text-align: center;
+  margin: auto;
+
+  width: 500px;
+  color: primary;
+}

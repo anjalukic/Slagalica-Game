@@ -1,0 +1,21 @@
+table {
+  width: 100%;
+  text-align: left;
+}
+mat-card{
+  margin-top: 2rem;
+  margin-bottom: 3px;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  text-align: center;
+}
+h1{
+  font-size: 20px;
+}
+.mat-header-cell {
+font-size: 15px;
+text-align: center;
+}
+.mat-cell{
+  text-align: center;
+}

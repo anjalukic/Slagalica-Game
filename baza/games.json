@@ -1,0 +1,6 @@
+{"_id":{"$oid":"5d87b3c47af5ad2e1416b377"},"username":"lukica","game":"5x5","points":{"$numberInt":"10"},"date":{"$date":{"$numberLong":"1568922468229"}}}
+{"_id":{"$oid":"5d87b4587af5ad2e1416b378"},"username":"jelena","game":"moj broj","points":{"$numberInt":"10"},"date":{"$date":{"$numberLong":"1569181816741"}}}
+{"_id":{"$oid":"5d87b4a47af5ad2e1416b379"},"username":"kaca","game":"moj broj","points":{"$numberInt":"0"},"date":{"$date":{"$numberLong":"1569181892108"}}}
+{"_id":{"$oid":"5d87b6027af5ad2e1416b37a"},"username":"lazar","game":"moj broj","points":{"$numberInt":"0"},"date":{"$date":{"$numberLong":"1569182242179"}}}
+{"_id":{"$oid":"5d87b6827af5ad2e1416b37b"},"username":"ana","game":"moj broj","points":{"$numberInt":"0"},"date":{"$date":{"$numberLong":"1569182370699"}}}
+{"_id":{"$oid":"5d87b7377af5ad2e1416b37d"},"username":"dragana","game":"moj broj","points":{"$numberInt":"5"},"date":{"$date":{"$numberLong":"1569182551351"}}}

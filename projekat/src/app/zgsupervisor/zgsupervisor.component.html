@@ -1,0 +1,33 @@
+<mat-card>
+  <div style="width: 100%; display: table;">
+    <div style="display: table-row">
+      <div style="width: 50%; display: table-cell;">
+        <h1>Zahtevi za evaluacijom:</h1>
+        <table mat-table [dataSource]="evals" class="mat-elevation-z8">
+          <ng-container matColumnDef="field">
+            <th mat-header-cell *matHeaderCellDef>Kategorija</th>
+            <td mat-cell *matCellDef="let evalPair">{{ evalPair.field }}</td>
+          </ng-container>
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Pojam</th>
+            <td mat-cell *matCellDef="let evalPair">{{ evalPair.name }}</td>
+          </ng-container>
+          <ng-container matColumnDef="accept">
+            <th mat-header-cell *matHeaderCellDef>Zahtev</th>
+            <td mat-cell *matCellDef="let evalPair">
+              <button mat-button (click)="accept(evalPair, true)">
+                Prihvati
+              </button>
+              <button mat-button (click)="accept(evalPair, false)">
+                Odbij
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</mat-card>

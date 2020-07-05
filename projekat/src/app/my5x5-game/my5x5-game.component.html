@@ -1,0 +1,46 @@
+<div>
+  <mat-card>
+    <p>Broj preostalih pokusaja: {{ numOfTries }}</p>
+    <mat-grid-list cols="5" rowHeight="1:1">
+      <mat-grid-tile *ngFor="let letter of letters; let i = index">
+        <p *ngIf="opened[i]">{{ letter }}</p>
+        <p *ngIf="!opened[i]">&diams;</p>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <form (submit)="onSubmit(form)" #form="ngForm">
+      <mat-form-field>
+        <input
+          matInput
+          style="text-align: center"
+          type="text"
+          pattern="[A-Za-z]"
+          name="letter"
+          autofocus
+          autocomplete="off"
+          required
+          ngModel
+          (input)="pickedLetter = $event.target.value"
+          #letter="ngModel"
+          [disabled]="gameDone"
+        />
+        <mat-error *ngIf="letter.invalid">Unesite jedno slovo!</mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" *ngIf="!goBack">
+        Dalje
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="navigateBack()"
+        *ngIf="goBack"
+      >
+        Vrati se nazad
+      </button>
+    </form>
+    <p>Broj poena: {{ points }}</p>
+    <p class="mat-caption" >
+      <span style="color: red; font-weight: 300;">Hint:</span><br>
+      <span style="color: red; font-weight: 300; font-size: 13px;"> {{ usedLetters }}</span>
+    </p>
+  </mat-card>
+</div>

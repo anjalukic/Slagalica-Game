@@ -1,0 +1,108 @@
+<div>
+  <form (submit)="onSubmit(form)" #form="ngForm">
+    <table>
+      <tr>
+        <td>
+          Prvi red:
+        </td>
+        <td>
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              name="first"
+              pattern="[A-Za-z]{4,5}"
+              ngModel
+              required
+              #first="ngModel"
+            />
+            <mat-error *ngIf="first.invalid">Unesite validnu rec!</mat-error>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Drugi red:
+        </td>
+        <td>
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              name="second"
+              pattern="[A-Za-z]{4,5}"
+              ngModel
+              required
+              #second="ngModel"
+            />
+            <mat-error *ngIf="second.invalid">Unesite validnu rec!</mat-error>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Treci red:
+        </td>
+        <td>
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              name="third"
+              pattern="[A-Za-z]{4,5}"
+              ngModel
+              required
+              #third="ngModel"
+            />
+            <mat-error *ngIf="third.invalid">Unesite validnu rec!</mat-error>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Cetvrti red:
+        </td>
+        <td>
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              name="fourth"
+              pattern="[A-Za-z]{4,5}"
+              ngModel
+              required
+              #fourth="ngModel"
+            />
+            <mat-error *ngIf="fourth.invalid">Unesite validnu rec!</mat-error>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Peti red:
+        </td>
+        <td>
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              name="fifth"
+              pattern="[A-Za-z]{4,5}"
+              ngModel
+
+              #fifth="ngModel"
+            />
+            <mat-error *ngIf="fifth.invalid">Unesite validnu rec!</mat-error>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button mat-raised-button color="primary" type="submit">
+            Posalji
+          </button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>

@@ -1,0 +1,44 @@
+<div id="container">
+  <div id="header">
+    <header>
+      <mat-toolbar color="primary">
+        <span class="menu">
+            <img src="../assets/logo.png" alt=" ">
+            Kviskoteka
+        </span>
+        <span>
+          <button
+            mat-button
+            (click)="navToHome()"
+            *ngIf="home() && !loggedIn()"
+          >
+            Pocetna
+          </button>
+          <button mat-button (click)="navToUser()" *ngIf="loggedIn()">
+            Moj meni
+          </button>
+          <button mat-button (click)="logOut()" *ngIf="loggedIn()">
+            Izloguj se
+          </button>
+        </span>
+      </mat-toolbar>
+    </header>
+  </div>
+  <div id="body">
+    <router-outlet></router-outlet>
+  </div>
+  <div id="footer">
+    <footer>
+      <br />
+      <address>
+        Napravila
+        <a href="mailto:la160146d@student.etf.bg.ac.rs">Anja Lukic</a><br />
+        Za
+        <a href="https://www.etf.bg.ac.rs">ETF Beograd</a>
+        <br />
+        Bulevar kralja Aleksandra 73, Beograd<br />
+        Srbija
+      </address>
+    </footer>
+  </div>
+</div>

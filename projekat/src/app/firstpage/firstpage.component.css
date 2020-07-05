@@ -1,0 +1,21 @@
+mat-card{
+  margin: 2%;
+}
+div{
+  text-align: center;
+  margin: auto;
+
+  width: 500px;
+  color: primary;
+}
+a{
+  font-size: 14px;
+  color: #e6005c;
+}
+a:visited{
+  color: #e6005c;
+}
+h1{
+  font-size: 30px;
+}
+

@@ -1,0 +1,16 @@
+na VM:
+ng --version
+npm uninstall -g angular-cli
+npm cache clean or npm cache verify #(if npm>5)
+npm install -g @angular/cli@latest
+----------------------------------
+ng new Kviz
+
+ng add @angular/material
+npm install --save express
+npm install --save-dev nodemon
+(package.json -> scripts -> "startserver": "nodemon server.js")
+npm install --save body-parser
+npm install --save mongodb
+npm install --save sha.js
+npm install --save multer

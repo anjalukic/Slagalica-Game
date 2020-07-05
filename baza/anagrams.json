@@ -1,0 +1,5 @@
+{"_id":{"$oid":"5d822a77afa44e38d0d577af"},"index":{"$numberInt":"1"},"riddle":"Krasan je odmor","answer":"Jadransko more"}
+{"_id":{"$oid":"5d83bdd91f27883cd0ac9a4e"},"index":{"$numberInt":"2"},"riddle":"Vraski Rus je pesnicka legenda","answer":"Aleksandar Sergejevic Puskin"}
+{"_id":{"$oid":"5d8664789ce7d818781db9e4"},"index":{"$numberInt":"3"},"riddle":"Ortoped","answer":"Torpedo"}
+{"_id":{"$oid":"5d8664dde7fe4115dca5999d"},"index":{"$numberInt":"4"},"riddle":"Proza puna divote","answer":"Znakovi pored puta"}
+{"_id":{"$oid":"5d87b2347af5ad2e1416b375"},"index":{"$numberInt":"5"},"riddle":"Ratne strepnje","answer":"Strane pretnje"}

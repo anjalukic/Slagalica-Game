@@ -1,0 +1,266 @@
+
+<div>
+  <mat-card>
+      <h3>Registracija</h3>
+    <form (submit)="onRegister(form)" #form="ngForm">
+      <table>
+        <tr>
+          <td>
+            Ime:
+          </td>
+          <td>
+            <mat-form-field>
+              <input
+                matInput
+                type="text"
+                name="name"
+                ngModel
+                required
+                #name="ngModel"
+              />
+              <mat-error *ngIf="name.invalid">Ovo polje je obavezno!</mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Prezime:
+          </td>
+          <td>
+            <mat-form-field>
+              <input
+                matInput
+                type="text"
+                name="lastname"
+                ngModel
+                required
+                #lastname="ngModel"
+              />
+              <mat-error *ngIf="lastname.invalid"
+                >Ovo polje je obavezno!</mat-error
+              >
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Email:
+          </td>
+          <td>
+            <mat-form-field>
+              <input
+                matInput
+                type="email"
+                pattern="[^ @]*@[^ @]*"
+                name="email"
+                ngModel
+                required
+                #email="ngModel"
+              />
+              <mat-error *ngIf="email.invalid"
+                >Morate uneti validnu email adresu!</mat-error
+              >
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Lozinka:
+          </td>
+          <td>
+            <mat-form-field>
+              <input
+                matInput
+                type="password"
+                name="psw"
+                pattern="^(?=.{8,12}$)(?!.*(\S)\1{2})(?=.*[A-Z])(?=.*[a-z]{3})(?=.*\d)(?=.*[^a-zA-Z0-9])([a-zA-Z]\S*)$"
+                ngModel
+                required
+                #psw="ngModel"
+                (click)="resetError()"
+              />
+              <mat-error *ngIf="psw.invalid"
+                >Lozinka nije zadovoljavajuca!</mat-error
+              >
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Ponovite lozinku:
+          </td>
+          <td>
+            <mat-form-field>
+              <input
+                matInput
+                type="password"
+                name="pswRepeated"
+                ngModel
+                required
+                #pswRepeated="ngModel"
+                (click)="resetError()"
+              />
+              <mat-error *ngIf="pswRepeated.invalid"
+                >Ovo polje je obavezno!</mat-error
+              >
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="mat-small" style="color:red">
+            {{ errorMessage }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Zanimanje:
+          </td>
+          <td>
+            <mat-form-field>
+              <input
+                matInput
+                type="text"
+                name="profession"
+                ngModel
+                required
+                #profession="ngModel"
+              />
+              <mat-error *ngIf="profession.invalid"
+                >Ovo polje je obavezno!</mat-error
+              >
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Korisnicko ime:
+          </td>
+          <td>
+            <mat-form-field>
+              <input
+                matInput
+                type="text"
+                name="username"
+                ngModel
+                required
+                #username="ngModel"
+              />
+              <mat-error *ngIf="username.invalid"
+                >Ovo polje je obavezno!</mat-error
+              >
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Pol:
+          </td>
+          <td>
+            <mat-form-field>
+              <mat-select [(value)]="gender" required>
+                <mat-option value="z">Zenski</mat-option>
+                <mat-option value="m">Muski</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            JMBG:
+          </td>
+          <td>
+            <mat-form-field>
+              <input
+                matInput
+                type="text"
+                name="jmbg"
+                pattern="^(0[1-9]|[1-2][0-9]|31(?!(?:0[2469]|11))|30(?!02))(0[1-9]|1[0-2])([09][0-9]{2})([0-8][0-9]|9[0-6])([0-9]{3})(\d)$"
+                ngModel
+                required
+                #jmbg="ngModel"
+              />
+              <mat-error *ngIf="jmbg.invalid">JMBG nije validan!</mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Slika:
+          </td>
+          <td>
+            <button
+              mat-raised-button
+              color="secondary"
+              type="button"
+              (click)="fileUpload.click()"
+            >
+              Dodaj sliku
+            </button>
+          </td>
+          <img [src]="imageAsString" [alt]="imageMessage" />
+          <input
+            type="file"
+            #fileUpload
+            style="display:none"
+            (change)="updateFile($event)"
+            accept="image/*"
+          />
+        </tr>
+        <tr>
+          <td>
+            Tajno pitanje:
+          </td>
+          <td>
+            <mat-form-field>
+              <input
+                matInput
+                type="text"
+                name="question"
+                ngModel
+                required
+                #question="ngModel"
+              />
+              <mat-error *ngIf="question.invalid"
+                >Ovo polje je obavezno!</mat-error
+              >
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Odgovor:
+          </td>
+          <td>
+            <mat-form-field>
+              <input
+                matInput
+                type="text"
+                name="answer"
+                ngModel
+                required
+                #answer="ngModel"
+              />
+              <mat-error *ngIf="answer.invalid"
+                >Ovo polje je obavezno!</mat-error
+              >
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" class="mat-small" style="color:red">
+            {{ registerFailed }}
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <button mat-raised-button color="primary" type="submit">
+              Registruj se
+            </button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </mat-card>
+</div>

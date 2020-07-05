@@ -1,0 +1,114 @@
+<div class="body">
+  <mat-card>
+    <p>{{ timeString }}</p>
+    <mat-progress-bar
+      style="height: 10px;"
+      mode="determinate"
+      [value]="100 - (timeLeft * 100) / 60"
+      color="warn"
+    ></mat-progress-bar>
+
+    <div class="numbers">
+      <h3>Moj broj: {{ result }}</h3>
+      <div style="text-align: center">
+        <button
+          *ngFor="let picked of pickedOneDigit; let i = index"
+          mat-raised-button
+          [disabled]="buttonsDisabled[i] || timeUp"
+          (click)="write(picked, i)"
+        >
+          {{ picked }}
+        </button>
+        &nbsp;&nbsp;
+        <button
+          mat-raised-button
+          (click)="write(pickedTwoDigit, 4)"
+          [disabled]="buttonsDisabled[4] || timeUp"
+        >
+          {{ pickedTwoDigit }}
+        </button>
+        <button
+          mat-raised-button
+          (click)="write(pickedThreeDigit, 5)"
+          [disabled]="buttonsDisabled[5] || timeUp"
+        >
+          {{ pickedThreeDigit }}
+        </button>
+      </div>
+      <div style="text-align: center">
+        <button mat-raised-button (click)="write('+', 6)" [disabled]="timeUp">
+          +
+        </button>
+        <button mat-raised-button (click)="write('-', 7)" [disabled]="timeUp">
+          -
+        </button>
+        <button mat-raised-button (click)="write('*', 8)" [disabled]="timeUp">
+          *
+        </button>
+        <button mat-raised-button (click)="write('/', 9)" [disabled]="timeUp">
+          /
+        </button>
+        <button mat-raised-button (click)="write('(', 10)" [disabled]="timeUp">
+          (
+        </button>
+        <button mat-raised-button (click)="write(')', 11)" [disabled]="timeUp">
+          )
+        </button>
+      </div>
+    </div>
+    <div style="margin-top: 1rem; margin-bottom: 1rem;">
+      <button mat-raised-button color="primary" (click)="stop()" [disabled]="gameStarted">Stop</button>
+    </div>
+    Vas izraz:
+    <mat-form-field>
+      <input
+        matInput
+        style="text-align: center"
+        type="text"
+        disabled
+        [placeholder]="exp"
+      />
+    </mat-form-field>
+    <button mat-raised-button (click)="delete()" [disabled]="timeUp">
+      &larr;
+    </button>
+    <br />
+    Unesite Vas broj:
+    <mat-form-field>
+      <input
+        matInput
+        style="text-align: center"
+        type="text"
+        name="myNum"
+        pattern="[1-9][0-9]*"
+        ngModel
+        required
+        #myNum="ngModel"
+        [disabled]="timeUp"
+        (input)="userNumber = $event.target.value"
+      />
+      <mat-error *ngIf="myNum.invalid"
+        >Pokusajte, ne mora uvek biti tacan broj!</mat-error
+      >
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      *ngIf="!submitted"
+      (click)="submit()"
+    >
+      Kraj
+    </button>
+    <p *ngIf="submitted">
+      {{ points }}
+    </p>
+    <button
+      mat-raised-button
+      color="primary"
+      *ngIf="submitted"
+      (click)="navigateBack()"
+    >
+      Vrati se nazad
+    </button>
+  </mat-card>
+</div>

@@ -1,0 +1,16 @@
+div{
+  text-align: center;
+  margin: auto;
+  right: 0;
+  margin-top: 2rem;
+  left: 0;
+  width: 700px;
+  color: primary;
+}
+form {
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 2rem;
+  text-align: center;
+}
+

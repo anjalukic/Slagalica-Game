@@ -1,0 +1,62 @@
+<div>
+    <form (submit)="onLogin(form)" #form="ngForm">
+      <table>
+        <tr>
+          <td>
+            Korisnicko ime:
+          </td>
+          <td>
+            <mat-form-field>
+              <input
+                matInput
+                type="text"
+                name="username"
+                ngModel
+                required
+                #username="ngModel"
+              />
+              <mat-error *ngIf="username.invalid"
+                >Ovo polje je obavezno!</mat-error
+              >
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Lozinka:
+          </td>
+          <td>
+            <mat-form-field>
+              <input
+                matInput
+                type="password"
+                name="psw"
+                ngModel
+                required
+                #psw="ngModel"
+              />
+              <mat-error *ngIf="psw.invalid">Ovo polje je obavezno!</mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="mat-small" style="color:red">
+            {{ message }}
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <a routerLink="/ForgotPsw">Zaboravili ste lozinku?</a>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2">
+            <button mat-raised-button color="primary" type="submit">
+              Uloguj se
+            </button>
+          </td>
+        </tr>
+      </table>
+    </form>
+</div>

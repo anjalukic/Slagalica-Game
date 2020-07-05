@@ -1,0 +1,25 @@
+<div>
+  <mat-card>
+    <form (submit)="onSubmit(form)" #form="ngForm">
+      Nova lozinka: &nbsp;&nbsp;
+      <mat-form-field>
+        <input
+          matInput
+          type="password"
+          name="newPsw"
+          pattern="^(?=.{8,12}$)(?!.*(\S)\1{2})(?=.*[A-Z])(?=.*[a-z]{3})(?=.*\d)(?=.*[^a-zA-Z0-9])([a-zA-Z]\S*)$"
+          ngModel
+          required
+          #newPsw="ngModel"
+        />
+        <mat-error *ngIf="newPsw.invalid"
+          >Niste uneli validnu novu lozinku!</mat-error
+        >
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">
+        Sacuvaj novu lozinku
+      </button>
+    </form>
+  </mat-card>
+</div>

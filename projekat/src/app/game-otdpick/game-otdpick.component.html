@@ -1,0 +1,59 @@
+<div>
+  <mat-card>
+    <form (submit)="onSubmit(form)" #form="ngForm">
+      <h1>Unesite igru za dan</h1>
+      <table>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input
+                matInput
+                [matDatepicker]="picker3"
+                [min]="minDate"
+                placeholder="Izaberite datum"
+                name="date"
+                ngModel
+                required
+                #date="ngModel"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker3"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker3></mat-datepicker>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <mat-label>Izaberite igru: </mat-label>
+              <mat-select [(ngModel)]="pickedGame" name="game" (selectionChange)="change()">
+                <mat-option *ngFor="let game of games" [value]="game">
+                  {{ game }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr *ngIf="anagramIsPicked">
+            <mat-form-field>
+                <mat-label>Izaberite anagram: </mat-label>
+                <mat-select [(ngModel)]="pickedAnagram" name="anagram">
+                  <mat-option *ngFor="let anagram of anagrams" [value]="anagram">
+                    {{ anagram.riddle }} -> {{anagram.answer}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+        </tr>
+        <tr>
+          <td>
+            <button mat-raised-button color="primary" type="submit">
+              Unesi
+            </button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </mat-card>
+</div>
